@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from './services/firebase'
 import Login from './pages/Login'
+import LoadStartingData from './pages/LoadStartingData'
 
 function App() {
   const [user, setUser] = useState(null)         // the logged-in user (or null)
@@ -39,6 +40,9 @@ function App() {
         </button>
       </div>
       <p className="text-gray-600">Welcome, {user.email}</p>
+      <div className="mt-6">
+        <LoadStartingData />
+      </div>
     </div>
   )
 }
